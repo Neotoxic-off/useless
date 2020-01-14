@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+
+import sys
+
+def useless():
+    i = 1
+    f = open(sys.argv[1], 'r')
+    line = f.readline()
+
+    while line:
+        if " \n" in line:
+            print("\033[31m" + " ~>\033[0m Useless space at the end of the line:\033[33m", i ,"\033[0m")
+        line = f.readline()
+        i += 1
+    f.close()
+
+useless()
