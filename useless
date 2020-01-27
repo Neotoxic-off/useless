@@ -9,9 +9,14 @@ def useless():
 
     while line:
         if " \n" in line:
-            print("\033[31m" + " ~>\033[0m Useless space at the end of the line:\033[33m", i ,"\033[0m")
+            print("\033[31m" + " ~>\033[0m Space at the end of the line:\033[33m", i ,"\033[0m")
+        if "\t" in line:
+            print("\033[31m" + " ~>\033[0m TAB the line:\033[33m", i ,"\033[0m")
+        if "                " in line:
+            print("\033[31m" + " ~>\033[0m Too deep line:\033[33m", i ,"\033[0m")
         line = f.readline()
         i += 1
     f.close()
 
 useless()
+
